@@ -213,10 +213,11 @@
 
 <style>
 	canvas {
+		cursor: pointer;
 		position: fixed;
 		inset: 0;
-		width: 100vw;
-		height: 100vh;
+		width: 100dvw;
+		height: 100dvh;
 		display: block;
 		z-index: 0;
 		pointer-events: auto;

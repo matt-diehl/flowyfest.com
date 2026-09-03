@@ -8,7 +8,7 @@
 		aspect-ratio: 9/16;
 		background-color: black;
 		border-radius: 6px;
-		height: 60vh;
+		height: 60dvh;
 		padding: 6px;
 		position: fixed;
 	}

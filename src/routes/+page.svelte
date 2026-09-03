@@ -30,21 +30,29 @@
 		return () => clearInterval(interval);
 	});
 
+	function playAudio() {
+		if (!audioElement) return;
+		audioElement.play();
+		isAudioPlaying = true;
+	}
+
+	function pauseAudio() {
+		if (!audioElement) return;
+		audioElement.pause();
+		isAudioPlaying = false;
+	}
+
 	function toggleAudio() {
 		if (!audioElement) return;
 		if (!isAudioPlaying) {
-			audioElement.play();
-			isAudioPlaying = true;
+			playAudio();
 		} else {
-			audioElement.pause();
-			isAudioPlaying = false;
+			pauseAudio();
 		}
 	}
 
 	function onBubblePop() {
 		totalBubblePops += 1;
-		console.log(`Total bubble pops: ${totalBubblePops}`);
-		console.log(`Math: ${totalBubblePops % 3}`);
 	}
 </script>
 
@@ -77,8 +85,8 @@
 		background-image: url('/img/flowy-dj-dt.jpg');
 		background-size: cover;
 		background-position: 50% 50%;
-		height: 100vh;
-		width: 100vw;
+		height: 100dvh;
+		width: 100dvw;
 	}
 
 	.music-button {
@@ -98,19 +106,18 @@
 		color: #ffffff;
 		color: white;
 		font-family: 'Kablammo', system-ui, cursive;
-		font-size: clamp(3rem, 15vw, 10rem);
+		font-size: clamp(3rem, 15dvw, 10rem);
 		left: 50%;
 		letter-spacing: 0.05em;
 		position: fixed;
 		text-align: center;
 		text-transform: uppercase;
-		top: 5vh;
+		top: 5dvh;
 		transform: translateX(-50%);
 		transform-origin: center;
 		user-select: none;
 		white-space: nowrap;
 		will-change: transform, color, text-shadow;
-		z-index: 10;
 	}
 
 	.title-letter {
@@ -150,10 +157,10 @@
 
 	@keyframes dance {
 		0% {
-			transform: translateX(-50%) translateY(0) rotate(-2deg);
+			transform: translateY(0) rotate(-2deg);
 		}
 		100% {
-			transform: translateX(-50%) translateY(-10px) rotate(2deg);
+			transform: translateY(-10px) rotate(2deg);
 		}
 	}
 	@keyframes neon-pulse {
