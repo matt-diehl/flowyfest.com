@@ -56,6 +56,14 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Flowy Fest</title>
+	<meta
+		name="description"
+		content="Flowy Fest - An annual music and chilling festival in Falling Waters, West Virginia"
+	/>
+</svelte:head>
+
 <div class="background" style="filter: hue-rotate({backgroundHueRotation}deg)">
 	<h1 class="title">
 		<span class="title-letter">F</span><span class="title-letter">l</span><span class="title-letter"
