@@ -1,5 +1,9 @@
-<div class="container">
-	<video src="/video/cats.m4v" autoplay muted loop playsinline></video>
+<script lang="ts">
+	let { hidden }: { hidden?: boolean } = $props();
+</script>
+
+<div class="container" style:display={hidden ? 'none' : 'block'}>
+	<video src="/video/cats.mp4" autoplay muted loop playsinline preload="auto"></video>
 </div>
 
 <style lang="scss">

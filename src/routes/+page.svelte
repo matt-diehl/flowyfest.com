@@ -65,9 +65,7 @@
 			>s</span
 		><span class="title-letter">t</span>
 	</h1>
-	{#if totalBubblePops % 3 === 0 && totalBubblePops > 0}
-		<Cats />
-	{/if}
+	<Cats hidden={totalBubblePops < 1 || totalBubblePops % 3 !== 0} />
 	<Bubbles {onBubblePop} />
 	<audio bind:this={audioElement} loop controls={false} src="/music/background-music.mp3"></audio>
 	<button class="music-button" onclick={toggleAudio}>
